@@ -22,7 +22,7 @@ This Python project is a simple implementation of a Telegram bot that can send m
 4. Set environment variables for your bot:
 
 ```export TELEGRAM_BOT_NAME="your_bot_name"
-export TELEGRAM_BOT_TOKEN="your_bot_token"```
+export TELEGRAM_BOT_TOKEN="your_bot_token" ```
 
 ## Usage
 1. Import the TelegramBot class:
