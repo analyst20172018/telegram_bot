@@ -41,39 +41,45 @@ export TELEGRAM_BOT_TOKEN="your_bot_token"
 
 4. Send a text message to a user:
 
-```chat_id = 123456789
+```
+chat_id = 123456789
 text = "Hello, World!"
-bot.send_message(chat_id, text)```
+bot.send_message(chat_id, text)
+```
 
 5. Send a photo to a user:
 
-```chat_id = 123456789
+```
+chat_id = 123456789
 with open("path/to/your/image.jpg", "rb") as image:
-    bot.send_photo(chat_id, image)```
+    bot.send_photo(chat_id, image)
+```
 
 6. Download a voice file
 
 To use the **download_voice_file** method, you first need to obtain the **file_id** of the voice message. You can get the file_id from an update received by your bot when someone sends a voice message. Here's an example of how to use the download_voice_file method:
 
-    ```from telegram_bot import TelegramBot
+```
+from telegram_bot import TelegramBot
 
-    bot = TelegramBot()
+bot = TelegramBot()
 
-    # Get updates from the bot's server
-    updates = bot.get_updates()
+# Get updates from the bot's server
+updates = bot.get_updates()
 
-    # Iterate through the updates to find a voice message
-    for update in updates['result']:
-        if 'voice' in update['message']:
-            # Get the file_id of the voice message
-            file_id = update['message']['voice']['file_id']
-            
-            # Download the voice file using the file_id
-            voice_data = bot.download_voice_file(file_id)
-            
-            # Save the voice file to the local storage
-            with open("voice_message.ogg", "wb") as voice_file:
-                voice_file.write(voice_data.read())
-            
-            print("Voice message saved as 'voice_message.ogg'")
-            break```
+# Iterate through the updates to find a voice message
+for update in updates['result']:
+    if 'voice' in update['message']:
+        # Get the file_id of the voice message
+        file_id = update['message']['voice']['file_id']
+        
+        # Download the voice file using the file_id
+        voice_data = bot.download_voice_file(file_id)
+        
+        # Save the voice file to the local storage
+        with open("voice_message.ogg", "wb") as voice_file:
+            voice_file.write(voice_data.read())
+        
+        print("Voice message saved as 'voice_message.ogg'")
+        break
+```
