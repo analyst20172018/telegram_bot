@@ -11,32 +11,40 @@ This Python project is a simple implementation of a Telegram bot that can send m
 
 ## Installation
 1. Clone this repository:
+
     git clone https://github.com/your-username/telegram-bot.git
 
 2. Install the required dependencies:
+
     pip install -r requirements.txt
 
 3. Create a new bot on Telegram by talking to the BotFather and obtain your bot token.
 4. Set environment variables for your bot:
+
     export TELEGRAM_BOT_NAME="your_bot_name"
     export TELEGRAM_BOT_TOKEN="your_bot_token"
 
 ## Usage
 1. Import the TelegramBot class:
+
     from telegram_bot import TelegramBot
 
 2. Create an instance of the TelegramBot class:
+
     bot = TelegramBot()
 
 3. Use the get_updates() method to fetch updates from the bot's server:
+
     updates = bot.get_updates()
 
 4. Send a text message to a user:
+
     chat_id = 123456789
     text = "Hello, World!"
     bot.send_message(chat_id, text)
 
 5. Send a photo to a user:
+
     chat_id = 123456789
     with open("path/to/your/image.jpg", "rb") as image:
         bot.send_photo(chat_id, image)
